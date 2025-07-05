@@ -8,7 +8,7 @@ public abstract class Product {
     public Product(String name, double price, int quantity) {
         this.name = name;
         this.price = price;
-        this.quantity = quantity;
+        this.quantity = quantity<=0 ? 0 : quantity;
     }
 
     public String getName() {
@@ -21,6 +21,10 @@ public abstract class Product {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public abstract boolean isExpirable();
