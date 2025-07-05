@@ -86,24 +86,96 @@ public class Fawry {
         }
     }
     public static void main(String[] args) {
+        // Normal Case
         Customer y = new Customer("1","Yehia Rasheed", "Smart Village", "0100", 500);
-        // To Test Insufficient balance (Corner Case 1)
-//        Customer y = new Customer("1","Yehia Rasheed", "Smart Village", "0100", 379);
         Fawry fawry = new Fawry(y);
-        // To Test Expiry Change the LocalDate to an old Date (Corner Case 2)
-        // To Test Out Of Stock Error, change the Quantity to 0 or Even Less than Zero (Corner Case 3)
-        //To Test the Individual shipping weights as well as the Total Package Weight, adjust individual product weights
-        //to be 1000 grams or more to see kg instead of g for grams ex: a 1000 gram product should be shown as 1 kg for simplicity (hidden case)
+
         groceryProduct cheese = new groceryProduct("Cheese", 100, 2, LocalDate.parse("2025-12-20"),200);
-        groceryProduct biscuits = new groceryProduct("Biscuits", 150, 3, LocalDate.parse("2025-07-07"),700);
-        mobileScratchCards scratchCards = new mobileScratchCards("kalemny",15,2);
+        groceryProduct biscuits = new groceryProduct("Biscuits", 150, 3, LocalDate.parse("2025-10-20"),700);
         Cart myCart = new Cart();
-        // To Test an empty Cart, Comment both lines below that add products to cart (Corner Case 4)
+
         myCart.addProduct(cheese,2);
         myCart.addProduct(biscuits,1);
-        //To Test the Shipping cost being zero, do not add the cheese and biscuits (Comment the previous two lines) and only add the Scratch Cards
+
+        checkout(y, myCart);
+
+//        // To Test Insufficient balance (Corner Case 1)
+//        Customer y = new Customer("1","Yehia Rasheed", "Smart Village", "0100", 379);
+//        Fawry fawry = new Fawry(y);
+//
+//        groceryProduct cheese = new groceryProduct("Cheese", 100, 2, LocalDate.parse("2025-12-20"),200);
+//        groceryProduct biscuits = new groceryProduct("Biscuits", 150, 3, LocalDate.parse("2025-10-20"),700);
+//        Cart myCart = new Cart();
+//
+//        myCart.addProduct(cheese,2);
+//        myCart.addProduct(biscuits,1);
+//
+//        checkout(y, myCart);
+
+//        // To Test Expiry Change the LocalDate to an old Date (Corner Case 2)
+//        Customer y = new Customer("1","Yehia Rasheed", "Smart Village", "0100", 500);
+//        Fawry fawry = new Fawry(y);
+//
+//        groceryProduct cheese = new groceryProduct("Cheese", 100, 2, LocalDate.parse("2022-12-20"),200);
+//        groceryProduct biscuits = new groceryProduct("Biscuits", 150, 3, LocalDate.parse("2025-10-20"),700);
+//        Cart myCart = new Cart();
+//
+//        myCart.addProduct(cheese,2);
+//        myCart.addProduct(biscuits,1);
+//
+//        checkout(y, myCart);
+//
+//        // To Test Out Of Stock Error, change the Quantity to 0 or Even Less than Zero (Corner Case 3) Also shows empty Cart
+//        Customer y = new Customer("1","Yehia Rasheed", "Smart Village", "0100", 500);
+//        Fawry fawry = new Fawry(y);
+//
+//        groceryProduct cheese = new groceryProduct("Cheese", 100, 0, LocalDate.parse("2025-12-20"),200);
+//        groceryProduct biscuits = new groceryProduct("Biscuits", 150, -1, LocalDate.parse("2025-10-20"),700);
+//        Cart myCart = new Cart();
+//
+//        myCart.addProduct(cheese,2);
+//        myCart.addProduct(biscuits,1);
+//
+//        checkout(y, myCart);
+//
+//        // To Test the Individual shipping weights as well as the Total Package Weight,
+//        // adjust individual product weights to be 1000 grams or more to see kg instead of g for grams
+//        // ex: a 1000 gram product should be shown as 1 kg for simplicity (hidden case)
+//        Customer y = new Customer("1","Yehia Rasheed", "Smart Village", "0100", 500);
+//        Fawry fawry = new Fawry(y);
+//
+//        groceryProduct cheese = new groceryProduct("Cheese", 100, 2, LocalDate.parse("2025-12-20"), 1000);
+//        groceryProduct biscuits = new groceryProduct("Biscuits", 150, 3, LocalDate.parse("2025-10-20"), 1500);
+//        Cart myCart = new Cart();
+//
+//        myCart.addProduct(cheese,2);
+//        myCart.addProduct(biscuits,1);
+//
+//        checkout(y, myCart);
+//
+//        // To Test an empty Cart, Comment both lines below that add products to cart (Corner Case 4)
+//        Customer y = new Customer("1","Yehia Rasheed", "Smart Village", "0100", 500);
+//        Fawry fawry = new Fawry(y);
+//
+//        groceryProduct cheese = new groceryProduct("Cheese", 100, 2, LocalDate.parse("2025-12-20"),200);
+//        groceryProduct biscuits = new groceryProduct("Biscuits", 150, 3, LocalDate.parse("2025-10-20"),700);
+//        Cart myCart = new Cart();
+//
+//        // myCart.addProduct(cheese,2);
+//        // myCart.addProduct(biscuits,1);
+//
+//        checkout(y, myCart);
+//
+//        // To Test the Shipping cost being zero, do not add the cheese and biscuits and only add the Scratch Cards
+//        Customer y = new Customer("1","Yehia Rasheed", "Smart Village", "0100", 500);
+//        Fawry fawry = new Fawry(y);
+//
+//        mobileScratchCards scratchCards = new mobileScratchCards("kalemny",15,2);
+//        Cart myCart = new Cart();
+//
 //        myCart.addProduct(scratchCards,2);
-        checkout(y,myCart);
+//
+//        checkout(y, myCart);
 
     }
 }
