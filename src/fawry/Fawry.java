@@ -80,6 +80,8 @@ public class Fawry {
                     System.out.print(" ");
                 System.out.print(subtotal + shippingCost);
                 customer.deductBalance(subtotal + shippingCost);
+                System.out.println();
+                System.out.println("Remaining Balance: " + customer.getBalance());
             }
         }
     }
@@ -100,7 +102,7 @@ public class Fawry {
         myCart.addProduct(cheese,2);
         myCart.addProduct(biscuits,1);
         //To Test the Shipping cost being zero, do not add the cheese and biscuits (Comment the previous two lines) and only add the Scratch Cards
-        myCart.addProduct(scratchCards,2);
+//        myCart.addProduct(scratchCards,2);
         checkout(y,myCart);
 
     }
